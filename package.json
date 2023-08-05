@@ -40,16 +40,15 @@
   },
   "keywords": [
     "react-native",
-    "ios",
     "android"
   ],
-  "repository": "https://github.com/sukesh-s/rn-google-pay-button-only",
+  "repository": "https://github.com/sukesh-s/Googlepay-button-only",
   "author": "sukesh-s <hello2sukesh@gmail.com> (https://github.com/sukesh-s)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sukesh-s/rn-google-pay-button-only/issues"
+    "url": "https://github.com/sukesh-s/Googlepay-button-only/issues"
   },
-  "homepage": "https://github.com/sukesh-s/rn-google-pay-button-only#readme",
+  "homepage": "https://github.com/sukesh-s/Googlepay-button-only#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
