@@ -1,16 +1,27 @@
 package com.rngooglepaybuttononly;
 
-import android.graphics.Color;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.RelativeLayout;
+
 
 import androidx.annotation.NonNull;
 
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
+import com.facebook.react.uimanager.annotations.ReactPropGroup;
 
-public class RnGooglePayButtonOnlyViewManager extends SimpleViewManager<View> {
+public class RnGooglePayButtonOnlyViewManager extends SimpleViewManager<RelativeLayout> {
   public static final String REACT_CLASS = "RnGooglePayButtonOnlyView";
+  private static final String TYPE_PAY="PAY_WITH";
+  private static final String TYPE_PAY_SHADOW="SHADOW_PAY_WITH";
+  private static final String TYPE_BUY="BUY_WITH";
+  private static final String TYPE_BUY_SHADOW="SHADOW_BUY_WITH";
+  private static final String TYPE_GOOGLE_PAY="GOOGLE_PAY";
+  private static final String TYPE_GOOGLE_PAY_SHADOW="SHADOW_GOOGLE_PAY";
+  public LayoutInflater layoutInflater;
 
   @Override
   @NonNull
@@ -20,12 +31,36 @@ public class RnGooglePayButtonOnlyViewManager extends SimpleViewManager<View> {
 
   @Override
   @NonNull
-  public View createViewInstance(ThemedReactContext reactContext) {
-    return new View(reactContext);
+  public RelativeLayout createViewInstance(ThemedReactContext reactContext) {
+    this.layoutInflater=LayoutInflater.from(reactContext);
+    return new RelativeLayout(reactContext);
   }
 
-  @ReactProp(name = "color")
-  public void setColor(View view, String color) {
-    view.setBackgroundColor(Color.parseColor(color));
+
+  @ReactProp(name="type")
+  public void setColor(RelativeLayout view, String type) {
+    switch (type){
+      case TYPE_PAY:
+        view.addView(layoutInflater.inflate(R.layout.pay_with_googlepay_button_no_shadow, null));
+        break;
+      case TYPE_PAY_SHADOW:
+        view.addView(layoutInflater.inflate(R.layout.pay_with_googlepay_button, null));
+        break;
+      case TYPE_BUY:
+        view.addView(layoutInflater.inflate(R.layout.buy_with_googlepay_button_no_shadow, null));
+        break;
+      case TYPE_BUY_SHADOW:
+        view.addView(layoutInflater.inflate(R.layout.buy_with_googlepay_button, null));
+        break;
+      case TYPE_GOOGLE_PAY_SHADOW:
+        view.addView(layoutInflater.inflate(R.layout.googlepay_button, null));
+        break;
+      case TYPE_GOOGLE_PAY:
+      default:
+        view.addView(layoutInflater.inflate(R.layout.googlepay_button_no_shadow, null));
+        break;
+    }
+    view.invalidate();
   }
+
 }

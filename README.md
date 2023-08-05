@@ -1,7 +1,5 @@
 # rn-google-pay-button-only
 
-button
-
 ## Installation
 
 ```sh
@@ -11,16 +9,46 @@ npm install rn-google-pay-button-only
 ## Usage
 
 ```js
-import { RnGooglePayButtonOnlyView } from "rn-google-pay-button-only";
+import GooglePayImage from 'rn-google-pay-button-only';
 
-// ...
+// wrap with
+<TouchableOpacity
+  style={styles.container}
+  onPress={() => console.log('Pressed')}
+>
+  <GooglePayImage type="PAY_WITH" style={styles.box} />
+</TouchableOpacity>;
 
-<RnGooglePayButtonOnlyView color="tomato" />
+const styles = StyleSheet.create({
+  box: {
+    width: 228,
+    height: 60,
+  },
+});
 ```
 
-## Contributing
+## Props
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+```js
+type RnGooglePayButtonOnlyProps = {
+  type: payButtonType,
+  style: ViewStyle,
+};
+```
+
+| **payButtonType** |
+| ----------------- |
+| PAY_WITH          |
+| SHADOW_PAY_WITH   |
+| BUY_WITH          |
+| SHADOW_BUY_WITH   |
+| GOOGLE_PAY        |
+| SHADOW_GOOGLE_PAY |
+
+## Caution ⚠️
+
+- This is a button only component and does not contain any logic to handle payment process.
+- Android only
 
 ## License
 

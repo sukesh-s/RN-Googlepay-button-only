@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   requireNativeComponent,
   UIManager,
@@ -11,16 +12,34 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
+type payButtonType =
+  | 'PAY_WITH'
+  | 'SHADOW_PAY_WITH'
+  | 'BUY_WITH'
+  | 'SHADOW_BUY_WITH'
+  | 'GOOGLE_PAY'
+  | 'SHADOW_GOOGLE_PAY';
+
 type RnGooglePayButtonOnlyProps = {
-  color: string;
+  type: payButtonType;
   style: ViewStyle;
 };
 
 const ComponentName = 'RnGooglePayButtonOnlyView';
 
-export const RnGooglePayButtonOnlyView =
+const RnGooglePayButtonOnlyView =
   UIManager.getViewManagerConfig(ComponentName) != null
     ? requireNativeComponent<RnGooglePayButtonOnlyProps>(ComponentName)
     : () => {
         throw new Error(LINKING_ERROR);
       };
+
+const GooglePayButtonImageOnly: React.FC<RnGooglePayButtonOnlyProps> = ({
+  ...props
+}) => {
+  if (Platform.OS !== 'android') {
+    return null;
+  }
+  return <RnGooglePayButtonOnlyView {...props} />;
+};
+export default GooglePayButtonImageOnly;

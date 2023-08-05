@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { RnGooglePayButtonOnlyView } from 'rn-google-pay-button-only';
+import GooglePayImage from 'rn-google-pay-button-only';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <RnGooglePayButtonOnlyView color="#32a852" style={styles.box} />
+      <GooglePayImage type="PAY_WITH" style={styles.box} />
     </View>
   );
 }
@@ -18,8 +18,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    width: 60,
+    width: 228,
     height: 60,
-    marginVertical: 20,
   },
 });
