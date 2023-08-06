@@ -8,6 +8,8 @@ npm install rn-google-pay-button-only
 
 ## Demo
 
+<image src="https://github.com/sukesh-s/RN-Googlepay-button-only/assets/48245207/6925bc9f-c4a6-4a9a-97f2-5073e890aaee" width="180px" heigh="400px">
+  
 ## Usage
 
 ```js
