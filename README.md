@@ -6,6 +6,8 @@
 npm install rn-google-pay-button-only
 ```
 
+## Demo
+
 ## Usage
 
 ```js
@@ -49,6 +51,12 @@ type RnGooglePayButtonOnlyProps = {
 
 - This is a button only component and does not contain any logic to handle payment process.
 - Android only
+
+## Resources
+
+We obtained the assets from the Google Pay brand's static resources.Refer to the website link for further details.
+
+https://developers.google.com/pay/api/android/guides/resources/payment-button-static-assets
 
 ## License
 

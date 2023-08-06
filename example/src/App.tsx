@@ -7,6 +7,11 @@ export default function App() {
   return (
     <View style={styles.container}>
       <GooglePayImage type="PAY_WITH" style={styles.box} />
+      <GooglePayImage type="SHADOW_PAY_WITH" style={styles.box} />
+      <GooglePayImage type="GOOGLE_PAY" style={styles.box} />
+      <GooglePayImage type="SHADOW_GOOGLE_PAY" style={styles.box} />
+      <GooglePayImage type="BUY_WITH" style={styles.box} />
+      <GooglePayImage type="SHADOW_BUY_WITH" style={styles.box} />
     </View>
   );
 }
@@ -15,7 +20,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   box: {
     width: 228,
