@@ -6,6 +6,7 @@ import GooglePayImage from 'rn-google-pay-button-only';
 export default function App() {
   return (
     <View style={styles.container}>
+      <GooglePayImage type="GOOGLE_PAY_PLAIN_DARK" style={styles.box} />
       <GooglePayImage type="PAY_WITH" style={styles.box} />
       <GooglePayImage type="SHADOW_PAY_WITH" style={styles.box} />
       <GooglePayImage type="GOOGLE_PAY" style={styles.box} />
