@@ -17,6 +17,6 @@ public class RnGooglePayButtonOnlyPackage implements ReactPackage {
 
   @Override
   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-    return Arrays.<ViewManager>asList(new RnGooglePayButtonOnlyViewManager());
+    return Arrays.<ViewManager>asList(new RnGooglePayButtonOnlyViewManager(), new RNGooglePayButtonAPIManager());
   }
 }
