@@ -18,7 +18,8 @@ type payButtonType =
   | 'BUY_WITH'
   | 'SHADOW_BUY_WITH'
   | 'GOOGLE_PAY'
-  | 'SHADOW_GOOGLE_PAY';
+  | 'SHADOW_GOOGLE_PAY'
+  | 'GOOGLE_PAY_PLAIN_DARK';
 
 type RnGooglePayButtonOnlyProps = {
   type: payButtonType;

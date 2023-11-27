@@ -21,6 +21,7 @@ public class RnGooglePayButtonOnlyViewManager extends SimpleViewManager<Relative
   private static final String TYPE_BUY_SHADOW="SHADOW_BUY_WITH";
   private static final String TYPE_GOOGLE_PAY="GOOGLE_PAY";
   private static final String TYPE_GOOGLE_PAY_SHADOW="SHADOW_GOOGLE_PAY";
+  private static final String TYPE_GOOGLE_PAY_PLAIN_DARK="GOOGLE_PAY_PLAIN_DARK";
   public LayoutInflater layoutInflater;
 
   @Override
@@ -55,7 +56,9 @@ public class RnGooglePayButtonOnlyViewManager extends SimpleViewManager<Relative
       case TYPE_GOOGLE_PAY_SHADOW:
         view.addView(layoutInflater.inflate(R.layout.googlepay_button, null));
         break;
-      case TYPE_GOOGLE_PAY:
+      case TYPE_GOOGLE_PAY_PLAIN_DARK:
+        view.addView(layoutInflater.inflate(R.layout.googlepay_button_dark,null));
+        break;
       default:
         view.addView(layoutInflater.inflate(R.layout.googlepay_button_no_shadow, null));
         break;

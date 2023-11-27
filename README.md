@@ -48,6 +48,7 @@ type RnGooglePayButtonOnlyProps = {
 | SHADOW_BUY_WITH   |
 | GOOGLE_PAY        |
 | SHADOW_GOOGLE_PAY |
+| GOOGLE_PAY_PLAIN_DARK |
 
 ## Caution ⚠️
 
